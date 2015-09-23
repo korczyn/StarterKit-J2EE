@@ -14,7 +14,6 @@ public class BookTo implements IdAware {
         this.authors = authors;
     }
 
-    @Override
     public Long getId() {
         return id;
     }

@@ -1,6 +1,5 @@
 package edu.starterkit.dao.impl;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -13,10 +12,9 @@ import edu.starterkit.common.Sequence;
 import edu.starterkit.dao.BookDao;
 import edu.starterkit.to.BookTo;
 
-@DefaultDao
-public class BookDaoImpl implements BookDao {
-
-    private final Set<BookTo> ALL_BOOKS = new HashSet<>();
+@HibernateDao
+public class BookDaoHibernateImpl implements BookDao{
+	private final Set<BookTo> ALL_BOOKS = new HashSet<>();
 
     private Sequence sequence;
 
@@ -52,11 +50,11 @@ public class BookDaoImpl implements BookDao {
 
     @Inject
     private void addTestBooks() {
-        ALL_BOOKS.add(new BookTo(1L, "Romeo i Julia", "Wiliam Szekspir"));
-        ALL_BOOKS.add(new BookTo(2L, "Opium w rosole", "Hanna Ożogowska"));
-        ALL_BOOKS.add(new BookTo(3L, "Przygody Odyseusza", "Jan Parandowski"));
-        ALL_BOOKS.add(new BookTo(4L, "Awantura w Niekłaju", "Edmund Niziurski"));
-        ALL_BOOKS.add(new BookTo(5L, "Pan Samochodzik i Fantomas", "Zbigniew Nienacki"));
-        ALL_BOOKS.add(new BookTo(6L, "Zemsta", "Aleksander Fredro"));
+        ALL_BOOKS.add(new BookTo(1L, "1Romeo i Julia", "Wiliam Szekspir"));
+        ALL_BOOKS.add(new BookTo(2L, "1Opium w rosole", "Hanna Ożogowska"));
+        ALL_BOOKS.add(new BookTo(3L, "1Przygody Odyseusza", "Jan Parandowski"));
+        ALL_BOOKS.add(new BookTo(4L, "1Awantura w Niekłaju", "Edmund Niziurski"));
+        ALL_BOOKS.add(new BookTo(5L, "1Pan Samochodzik i Fantomas", "Zbigniew Nienacki"));
+        ALL_BOOKS.add(new BookTo(6L, "1Zemsta", "Aleksander Fredro"));
     }
 }

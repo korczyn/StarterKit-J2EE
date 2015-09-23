@@ -17,7 +17,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import edu.starterkit.aop.BookDaoAdvisor;
+import edu.starterkit.dao.impl.BookDaoHibernateImpl;
 import edu.starterkit.dao.impl.BookDaoImpl;
+import edu.starterkit.dao.impl.DefaultDao;
 import edu.starterkit.exception.BookNotNullIdException;
 import edu.starterkit.service.impl.BookServiceImpl;
 import edu.starterkit.to.BookTo;
@@ -25,7 +27,7 @@ import edu.starterkit.to.BookTo;
 
 
 @RunWith(CdiRunner.class)
-@AdditionalClasses({BookServiceImpl.class, BookDaoImpl.class, BookDaoAdvisor.class})
+@AdditionalClasses({BookServiceImpl.class, BookDaoImpl.class, BookDaoHibernateImpl.class, BookDaoAdvisor.class})
 public class BookServiceImplTest {
 
     @Inject
@@ -39,6 +41,7 @@ public class BookServiceImplTest {
         assertNotNull(allBooks);
         assertFalse(allBooks.isEmpty());
         assertEquals(6, allBooks.size());
+        System.out.println(allBooks.get(0).getTitle());
     }
 
     @Test
