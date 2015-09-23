@@ -3,17 +3,17 @@ package edu.starterkit.service.impl;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
+import edu.starterkit.aop.Logging;
 import edu.starterkit.dao.BookDao;
 import edu.starterkit.dao.impl.DefaultDao;
-import edu.starterkit.dao.impl.HibernateDao;
 import edu.starterkit.service.BookService;
 import edu.starterkit.to.BookTo;
 
+@Logging
 public class BookServiceImpl implements BookService {
 
-	@Inject @HibernateDao
+	@Inject @DefaultDao
 	private BookDao bookDao;
 
 	@Override

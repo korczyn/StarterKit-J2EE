@@ -1,6 +1,5 @@
 package edu.starterkit.dao.impl;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
+import edu.starterkit.aop.Logging;
 import edu.starterkit.aop.NullableId;
 import edu.starterkit.common.Sequence;
 import edu.starterkit.dao.BookDao;
@@ -15,7 +15,6 @@ import edu.starterkit.to.BookTo;
 
 @DefaultDao
 public class BookDaoImpl implements BookDao {
-
     private final Set<BookTo> ALL_BOOKS = new HashSet<>();
 
     private Sequence sequence;
